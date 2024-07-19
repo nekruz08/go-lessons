@@ -64,17 +64,17 @@
 // }
 
 // -------------------------------------------------------------------------------------------------
-package main
+// package main
 
-import "fmt"
+// import "fmt"
 
-func main() {
-    First(1)
-}
+// func main() {
+//     First(1)
+// }
 
-func First(a int)  {
-    fmt.Println("Hello Wrold")
-}
+// func First(a int)  {
+//     fmt.Println("Hello Wrold")
+// }
 // -------------------------------------------------------------------------------------------------
 
 // package main
@@ -87,7 +87,93 @@ func First(a int)  {
 // }
 // func Multiplier(factor int)( kfc func () ){
 // return kfc(factor int){
-	
+
 // }
 
 // }
+// -------------------------------------------------------------------------------------------------
+// package main
+
+// import (
+// 	"fmt"
+// 	"strconv"
+// )
+
+// func main() {
+// 	var input string
+// 	fmt.Print("Enter the score: ")
+// 	_, err := fmt.Scanln(&input)
+// 	if err != nil {
+// 		fmt.Println("Error reading input:", err)
+// 		return
+// 	}
+
+// 	score, err := strconv.Atoi(input)
+// 	if err != nil {
+// 		fmt.Println("Error converting input to integer:", err)
+// 		return
+// 	}
+
+// 	grade := GetGrade(score)
+// 	fmt.Printf("Grade for score %d is %s\n", score, grade)
+// }
+
+// func GetGrade(score int) string {
+// 	var grade string
+// 	switch {
+// 	case score >= 90:
+// 		grade = "A"
+// 	case score >= 80:
+// 		grade = "B"
+// 	case score >= 70:
+// 		grade = "C"
+// 	default:
+// 		grade = "F"
+// 	}
+// 	return grade
+// }
+
+// -------------------------------------------------------------------------------------------------
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	for i := 0; i < 10; i++ {
+// 		fmt.Println("hello")
+// 		if i==5{
+// 			break
+// 		}
+// 	}
+// }
+// -------------------------------------------------------------------------------------------------
+package main
+
+import "fmt"
+
+func main() {
+    // Example 1: Skipping odd numbers
+    fmt.Println("Example 1: Skipping odd numbers")
+    for i := 1; i <= 10; i++ {
+        if i%2 != 0 {
+            // Skip odd numbers
+            continue
+        }
+        fmt.Println(i)
+    }
+
+    fmt.Println()
+
+    // Example 2: Using continue with nested loops
+    fmt.Println("Example 2: Using continue with nested loops")
+    for outer := 1; outer <= 3; outer++ {
+        fmt.Printf("Outer loop iteration %d\n", outer)
+        for inner := 1; inner <= 3; inner++ {
+            if outer == 2 && inner == 2 {
+                // Skip printing "2 2"
+                continue
+            }
+            fmt.Printf("%d %d\n", outer, inner)
+        }
+    }
+}

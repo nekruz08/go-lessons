@@ -147,33 +147,59 @@
 // 	}
 // }
 // -------------------------------------------------------------------------------------------------
+// package main
+
+// import "fmt"
+
+// func main() {
+//     // Example 1: Skipping odd numbers
+//     fmt.Println("Example 1: Skipping odd numbers")
+//     for i := 1; i <= 10; i++ {
+//         if i%2 != 0 {
+//             // Skip odd numbers
+//             continue
+//         }
+//         fmt.Println(i)
+//     }
+
+//     fmt.Println()
+
+//	    // Example 2: Using continue with nested loops
+//	    fmt.Println("Example 2: Using continue with nested loops")
+//	    for outer := 1; outer <= 3; outer++ {
+//	        fmt.Printf("Outer loop iteration %d\n", outer)
+//	        for inner := 1; inner <= 3; inner++ {
+//	            if outer == 2 && inner == 2 {
+//	                // Skip printing "2 2"
+//	                continue
+//	            }
+//	            fmt.Printf("%d %d\n", outer, inner)
+//	        }
+//	    }
+//	}
+//
+// -------------------------------------------------------------------------------------------------
+// package main
+
+// import "fmt"
+
+// func main() {
+//     var a *int
+//     fmt.Println(*a)
+// }
+// -------------------------------------------------------------------------------------------------
+
 package main
 
 import "fmt"
 
 func main() {
-    // Example 1: Skipping odd numbers
-    fmt.Println("Example 1: Skipping odd numbers")
-    for i := 1; i <= 10; i++ {
-        if i%2 != 0 {
-            // Skip odd numbers
-            continue
-        }
-        fmt.Println(i)
-    }
-
-    fmt.Println()
-
-    // Example 2: Using continue with nested loops
-    fmt.Println("Example 2: Using continue with nested loops")
-    for outer := 1; outer <= 3; outer++ {
-        fmt.Printf("Outer loop iteration %d\n", outer)
-        for inner := 1; inner <= 3; inner++ {
-            if outer == 2 && inner == 2 {
-                // Skip printing "2 2"
-                continue
-            }
-            fmt.Printf("%d %d\n", outer, inner)
-        }
+    var ptr *int // объявляем указатель на int
+    fmt.Println("Значение указателя ptr:", ptr)
+    
+    if ptr == nil {
+        fmt.Println("Указатель ptr равен nil")
+    } else {
+        fmt.Println("Указатель ptr не равен nil")
     }
 }

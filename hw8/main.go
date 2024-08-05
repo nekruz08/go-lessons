@@ -1,12 +1,3 @@
-// •	Умножить все элементы массива на заданное число.
-// •	Найти все индексы заданного числа в массиве.
-// •	Создать копию массива.
-// •	Объединить два массива.
-// •	Поменять местами максимальный и минимальный элементы массива.
-// •	Проверить, является ли массив палиндромом.
-// •	Найти второе наибольшее число в массиве.
-// •	Перевернуть массив.
-// •	Удалить дубликаты из массива.
 // •	Переместить все нули в конце массива, сохраняя порядок ненулевых элементов.
 // •	Найти пересечение двух массивов.
 // •	Проверить, является ли массив подмножеством другого массива.
@@ -109,45 +100,195 @@
 // 	sum := 0
 // 	count := 0
 
-//		for _, value := range arr {
-//			sum += value
-//			if value > 0 {
-//				count++
-//			}
-//		}
-//		return sum / count
-//	}
+// 		for _, value := range arr {
+// 			sum += value
+// 			if value > 0 {
+// 				count++
+// 			}
+// 		}
+// 		return sum / count
+// 	}
 //
 // -------------------------------------------------------------------------------------------------
 // Удалить все вхождения заданного числа из массива.
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	slice:=[]int{1,11,2,3,4,5,11,6,7,8,9,10,11,11,11,11,11,11,11}
+// 	deletNumber(11,slice)
+// }
+
+//	func deletNumber(n int,slice []int)  {
+//		buffer:=[]int{}
+//		for _, v := range slice {
+//			if v!=n{
+//				buffer = append(buffer, v)
+//			}
+//		}
+//		fmt.Println(buffer)
+//	}
+//
+// -------------------------------------------------------------------------------------------------
+// •	Найти все индексы заданного числа в массиве.
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	massive:=[10]int{1,2,3,4,5,6,7,8,9,10}
+// 	slice:=massive[:]
+// 	a(10,slice)
+
+// }
+//
+//	func a(n int,slice []int)  {
+//		var buffer []int
+//		for i, v := range slice {
+//			if v==n{
+//				buffer = append(buffer, i)
+//			}
+//		}
+//		fmt.Println(buffer)
+//	}
+//
+// -------------------------------------------------------------------------------------------------
+// Создать копию массива.
+// package main
+
+// import "fmt"
+
+//	func main() {
+//		var a [10]int=[10]int{1,2,3,4,5,6,7,8,9,10}
+//		b:=a[:]
+//		coppyA:=coppyArray(b)
+//		fmt.Println(coppyA)
+//	}
+//
+//	func coppyArray(slice []int) []int {
+//		buffer:=make([]int,len(slice))
+//		copy(buffer,slice)
+//		return buffer
+//	}
+//
+// -------------------------------------------------------------------------------------------------
+// Объединить два массива.
+// package main
+
+// import "fmt"
+
+//	func main() {
+//		a := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+//		b := [10]int{11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
+//		sliceA := a[:]
+//		sliceB := b[:]
+//		mergedSlice := mergeArray(sliceA, sliceB)
+//		fmt.Println(mergedSlice)
+//	}
+//
+//	func mergeArray(a, b []int) []int {
+//		c:=a[:]
+//		c = append(c, b...)
+//		return c
+//	}
+//
+// -------------------------------------------------------------------------------------------------
+// Поменять местами максимальный и минимальный элементы массива.
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	a := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+// 	swap(a)
+// }
+// func swap(a []int) {
+// 	maxIndex := 0
+// 	minIndex := 0
+
+// 	for i, v := range a {
+// 		if v > a[maxIndex] {
+// 			maxIndex = i
+// 		}
+// 		if v < a[minIndex] {
+// 			minIndex = i
+// 		}
+
+//		}
+//		a[maxIndex], a[minIndex] = a[minIndex], a[maxIndex]
+//		fmt.Println(a)
+//	}
+//
+// -------------------------------------------------------------------------------------------------
+// Проверить, является ли массив палиндромом.
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	a := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10,10,9,8,7,6,5,4,3,2,1}
+// 	fmt.Println(IsPalindrom(a))
+// }
+// func IsPalindrom(a []int) bool {
+// 	left := 0
+// 	right := len(a) - 1
+// 	for left < right {
+// 		if a[left] != a[right] {
+// 			return false
+// 		}
+// 		left++
+// 		right--
+// 	}
+
+//		return true
+//	}
+//
+// -------------------------------------------------------------------------------------------------
+// Найти второе наибольшее число в массиве.
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	slice := []int{64, 34, 25, 12, 22, 11, 90}
+// 	bubbleSort(slice)
+// 	fmt.Println(slice)
+// 	fmt.Println(slice[5])
+// }
+
+//	func bubbleSort(slice []int) {
+//		n := len(slice)
+//		for i := 0; i < n-1; i++ {
+//			for j := 0; j < n-i-1; j++ {
+//				if slice[j] > slice[j+1] {
+//					slice[j], slice[j+1] = slice[j+1], slice[j]
+//				}
+//			}
+//		}
+//	}
+//
+// -------------------------------------------------------------------------------------------------
+// Перевернуть массив.
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	arr := [10]int{10, 5, 3, 8, 7, 2, 9, 5, 6, 5}
-	numberToRemove := 5
+	slice := []int{1, 2, 3, 4, 5, 6, 8, 9, 10}
+	reverse(slice)
+	fmt.Println(slice)
 
-	arrSlice := arr[:]
-
-	newArrSlice := removeOccurrences(arrSlice, numberToRemove)
-
-	var newArr [10]int
-	copy(newArr[:], newArrSlice)
-
-	fmt.Printf("Массив после удаления %d: %v\n", numberToRemove, newArr)
 }
-
-func removeOccurrences(arr []int, number int) []int {
-	result := []int{}
-
-	for _, value := range arr {
-		if value != number {
-			result = append(result, value)
-		}
+func reverse(slice []int) {
+	left := 0
+	right := len(slice) - 1
+	for left < right {
+		slice[left], slice[right] = slice[right], slice[left]
+		left++
+		right--
 	}
-
-	return result
 }
+// -------------------------------------------------------------------------------------------------
+// Удалить дубликаты из массива.
+

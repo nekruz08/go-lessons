@@ -337,6 +337,6 @@ func main() {
 		strings: []string{"Hello", "World", "Go", "Programming"},
 	}
 
-	fmt.Println("Concat:", sj.Concat())        // Вывод: HelloWorldGoProgramming
+	fmt.Println("Concat:", sj.Concat())        // ВывоД: HelloWorldGoProgramming
 	fmt.Println("Join (', '):", sj.Join(", ")) // Вывод: Hello, World, Go, Programming
 }

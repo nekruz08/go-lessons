@@ -871,13 +871,182 @@
 //
 // -------------------------------------------------------------------------------------------------
 // Поиск элементов
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	slice := []int{10, 20, 30, 40, 50}
+// 	index := linearSearch(slice, 30)
+// 	fmt.Println("Index of 30:", index) // Index of 30: 2
+// }
+
+// func linearSearch(slice []int, target int) int {
+// 	for i, v := range slice {
+// 		if v == target {
+// 			return i
+// 		}
+// 	}
+// 	return -1 // элемент не найден
+// }
+// -------------------------------------------------------------------------------------------------
+// package main
+
+// import "fmt"
+
+// // BinarySearch выполняет бинарный поиск в отсортированном слайсе и возвращает индекс элемента или -1, если элемент не найден.
+// func BinarySearch(arr []int, target int) int {
+//     low, high := 0, len(arr)-1
+
+//     for low <= high {
+//         mid := low + (high-low)/2
+
+//         if arr[mid] == target {
+// 			return mid
+//         } else if arr[mid] < target {
+//             low = mid + 1
+//         } else {
+//             high = mid - 1
+//         }
+//     }
+
+//     return -1
+// }
+
+// func main() {
+//     arr := []int{1, 3, 5, 7, 9, 11, 13}
+//     target := 7
+
+//	    result := BinarySearch(arr, target)
+//	    if result != -1 {
+//	        fmt.Printf("Элемент %d найден в индексе %d\n", target, result)
+//	    } else {
+//	        fmt.Println("Элемент не найден")
+//	    }
+//	}
+//
+// ------------------------------------------------------------------------------------------------
+// package main
+
+// import (
+// 	"fmt"
+// 	"sort"
+// )
+
+//	func main() {
+//		slice := []int{4, 2, 3, 1}
+//		sort.Ints(slice)
+//		fmt.Println(slice) // [1 2 3 4]
+//	}
+//
+// ------------------------------------------------------------------------------------------------
+// package main
+
+// import (
+// 	"fmt"
+// 	"sort"
+// )
+
+//	func main() {
+//		slice := []float64{4.1, 2.2, 3.3, 1.4}
+//		sort.Float64s(slice)
+//		fmt.Println(slice) // [1.4 2.2 3.3 4.1]
+//	}
+//
+// ------------------------------------------------------------------------------------------------
+// package main
+
+// import (
+// 	"fmt"
+// 	"sort"
+// )
+
+//	func main() {
+//		slice := []string{"dog", "cat", "bird"}
+//		sort.Strings(slice)
+//		fmt.Println(slice) // [bird cat dog]
+//	}
+//
+// ------------------------------------------------------------------------------------------------
+// - sort.Sort(sort.Interface)
+// Позволяет сортировать срезы пользовательских типов,
+// реализующих интерфейс sort.Interface. Интерфейс требует реализации трех методов: Len(),
+// Less(i, j int) bool, и Swap(i, j int).
+// package main
+
+// import (
+// 	"fmt"
+// 	"sort"
+// )
+
+// type Person struct {
+// 	Name string
+// 	Age  int
+// }
+// type ByAge []Person
+
+// func (a ByAge) Len() int {
+// 	return len(a)
+// }
+// func (a ByAge) Less(i, j int) bool {
+// 	return a[i].Age < a[j].Age
+// }
+// func (a ByAge) Swap(i, j int) {
+// 	a[i], a[j] = a[j], a[i]
+// }
+
+//	func main() {
+//		people := []Person{
+//			{"Alice", 3},
+//			{"Bob", 2},
+//			{"Charlie", 1}}
+//		sort.Sort(ByAge(people))
+//		fmt.Println(people) // [{Bob 25} {Alice 30} {Charlie 35}]
+//	}
+//
+// ------------------------------------------------------------------------------------------------
+// Встроенные возможности Go для поиска
+// - sort.SearchInts(slice []int, x int) int
+// package main
+
+// import (
+// 	"fmt"
+// 	"sort"
+// )
+
+// func main() {
+// 	slice := []int{1, 2, 3, 4, 5}
+// 	index := sort.SearchInts(slice, 3)
+// 	fmt.Println(index) // 2
+
+// }
+// ------------------------------------------------------------------------------------------------
+// Ищет значение x в отсортированном срезе вещественных чисел.
+// package main
+
+// import (
+// 	"fmt"
+// 	"sort"
+// )
+
+//	func main() {
+//		slice := []float64{1.1, 2.2, 3.3, 4.4, 5.5}
+//		index := sort.SearchFloat64s(slice, 3.3)
+//		fmt.Println(index) // 2
+//	}
+//
+// ------------------------------------------------------------------------------------------------
+// Ищет строку x в отсортированном срезе строк.
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
-	slice:=[]int{1,2,3}
-	a:="allo"
-	fmt.Println(slice)
-	fmt.Println(a)
+	slice := []string{"apple", "banana", "cherry"}
+	index := sort.SearchStrings(slice, "banana")
+	fmt.Println(index) // 1
+
 }

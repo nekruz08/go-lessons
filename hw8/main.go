@@ -1,6 +1,3 @@
-// •	Переместить все нули в конце массива, сохраняя порядок ненулевых элементов.
-// •	Найти пересечение двух массивов.
-// •	Проверить, является ли массив подмножеством другого массива.
 // •	Объединить два отсортированных массива в один отсортированный.
 // •	Найти длину самого длинного подмассива, в котором все элементы различны.
 // •	Найти все подмассивы, сумма которых равна заданному числу.
@@ -270,25 +267,124 @@
 //
 // -------------------------------------------------------------------------------------------------
 // Перевернуть массив.
-package main
+// package main
 
-import "fmt"
+// import "fmt"
 
-func main() {
-	slice := []int{1, 2, 3, 4, 5, 6, 8, 9, 10}
-	reverse(slice)
-	fmt.Println(slice)
+// func main() {
+// 	slice := []int{1, 2, 3, 4, 5, 6, 8, 9, 10}
+// 	reverse(slice)
+// 	fmt.Println(slice)
 
-}
-func reverse(slice []int) {
-	left := 0
-	right := len(slice) - 1
-	for left < right {
-		slice[left], slice[right] = slice[right], slice[left]
-		left++
-		right--
-	}
-}
+// }
+//
+//	func reverse(slice []int) {
+//		left := 0
+//		right := len(slice) - 1
+//		for left < right {
+//			slice[left], slice[right] = slice[right], slice[left]
+//			left++
+//			right--
+//		}
+//	}
+//
 // -------------------------------------------------------------------------------------------------
 // Удалить дубликаты из массива.
+// package main
 
+// import (
+// 	"fmt"
+// )
+
+// func main() {
+// 	slice := []int{1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 10}
+// 	deleteDublicate(slice)
+// 	// fmt.Println(∆)
+// }
+// func deleteDublicate(slice []int) {
+// 	newSlice := []int{}
+// 	for i := 0; i < len(slice); i++ {
+// 		flag := false
+// 		for j := 0; j < len(newSlice); j++ {
+// 			if slice[i] == newSlice[j] {
+// 				flag = true
+// 				break
+// 			}
+// 		}
+// 		if !flag {
+// 			newSlice = append(newSlice, slice[i])
+// 		}
+// 	}
+// 	fmt.Println(newSlice)
+
+// }
+// -------------------------------------------------------------------------------------------------
+// Переместить все нули в конце массива, сохраняя порядок ненулевых элементов.
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	slice := []int{1, 0, 2, 3, 4, 5, 6, 0, 7, 8, 9, 0, 10, 11, 12, 0, 13, 14}
+// 	nulToEnd(slice)
+// }
+
+//	func nulToEnd(slice []int) {
+//		numbers := []int{}
+//		zero := []int{}
+//		for _, v := range slice {
+//			if v == 0 {
+//				zero = append(zero, v)
+//			} else {
+//				numbers = append(numbers, v)
+//			}
+//		}
+//		numbers = append(numbers, zero...)
+//		fmt.Println(numbers)
+//	}
+//
+//-------------------------------------------------------------------------------------------------
+// // Найти пересечение двух массивов.
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	first := []int{1, 1,8,1, 2, 3, 4}
+// 	second := []int{1, 1, 8, 8, 4}
+// 	a(first, second)
+// }
+// func a(first, second []int) {
+// 	result := []int{}
+
+// 	for i := 0; i < len(first); i++ {
+// 		exist := false
+
+// 		for _, v := range result {
+// 			if v==first[i]{
+// 				exist=true
+// 				break
+// 			}
+// 		}
+		
+// 		if exist {
+// 			continue
+// 		}
+
+// 		for j := 0; j < len(second); j++ {
+// 				if first[i] == second[j] {
+// 					result = append(result, first[i])
+// 					break
+// 				}
+// 			}
+// 		}
+// 		fmt.Println(result)
+
+// 	}
+//-------------------------------------------------------------------------------------------------
+// Проверить, является ли массив подмножеством другого массива.
+package main
+
+func main() {
+	
+}

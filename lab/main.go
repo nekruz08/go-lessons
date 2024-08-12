@@ -188,18 +188,51 @@
 //     fmt.Println(*a)
 // }
 // -------------------------------------------------------------------------------------------------
+// package main
+
+// import "fmt"
+
+// func main() {
+//     var ptr *int // объявляем указатель на int
+//     fmt.Println("Значение указателя ptr:", ptr)
+    
+//     if ptr == nil {
+//         fmt.Println("Указатель ptr равен nil")
+//     } else {
+//         fmt.Println("Указатель ptr не равен nil")
+//     }
+// }
+// -------------------------------------------------------------------------------------------------
 
 package main
 
-import "fmt"
+import (
+  "fmt"
+  "strings"
+)
 
+type StringProcessor interface {
+  Length() int
+  WordCount() int
+}
+type MyString struct {
+  String string
+}
+
+func (m MyString) Length() int {
+  return len(m.String)
+}
+func (m MyString) WordCount() int {
+  return len(strings.Fields(m.String))
+}
+func A(s StringProcessor) {
+  fmt.Println(s.Length())
+  fmt.Println(s.WordCount())
+}
+func B() {
+  m := MyString{String: "Golang is a very interesting language"}
+  A(m)
+}
 func main() {
-    var ptr *int // объявляем указатель на int
-    fmt.Println("Значение указателя ptr:", ptr)
-    
-    if ptr == nil {
-        fmt.Println("Указатель ptr равен nil")
-    } else {
-        fmt.Println("Указатель ptr не равен nil")
-    }
+  B()
 }

@@ -195,7 +195,7 @@
 // func main() {
 //     var ptr *int // объявляем указатель на int
 //     fmt.Println("Значение указателя ptr:", ptr)
-    
+
 //     if ptr == nil {
 //         fmt.Println("Указатель ptr равен nil")
 //     } else {
@@ -203,36 +203,53 @@
 //     }
 // }
 // -------------------------------------------------------------------------------------------------
+// package main
 
+// import (
+//   "fmt"
+//   "strings"
+// )
+
+// type StringProcessor interface {
+//   Length() int
+//   WordCount() int
+// }
+// type MyString struct {
+//   String string
+// }
+
+//	func (m MyString) Length() int {
+//	  return len(m.String)
+//	}
+//
+//	func (m MyString) WordCount() int {
+//	  return len(strings.Fields(m.String))
+//	}
+//
+//	func A(s StringProcessor) {
+//	  fmt.Println(s.Length())
+//	  fmt.Println(s.WordCount())
+//	}
+//
+//	func B() {
+//	  m := MyString{String: "Golang is a very interesting language"}
+//	  A(m)
+//	}
+//
+//	func main() {
+//	  B()
+//	}
+//
+// -------------------------------------------------------------------------------------------------
 package main
 
-import (
-  "fmt"
-  "strings"
-)
+import "fmt"
 
-type StringProcessor interface {
-  Length() int
-  WordCount() int
-}
-type MyString struct {
-  String string
-}
-
-func (m MyString) Length() int {
-  return len(m.String)
-}
-func (m MyString) WordCount() int {
-  return len(strings.Fields(m.String))
-}
-func A(s StringProcessor) {
-  fmt.Println(s.Length())
-  fmt.Println(s.WordCount())
-}
-func B() {
-  m := MyString{String: "Golang is a very interesting language"}
-  A(m)
-}
 func main() {
-  B()
+  v:=true
+  if v {
+    return 
+  }
+  fmt.Println("Hello work!")
+  defer fmt.Println("End of main")
 }

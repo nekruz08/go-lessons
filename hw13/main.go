@@ -338,5 +338,5 @@ func main() {
 	}
 
 	fmt.Println("Concat:", sj.Concat())        // ВывоД: HelloWorldGoProgramming
-	fmt.Println("Join (', '):", sj.Join(", ")) // Вывод: Hello, World, Go, Programming
+	fmt.Println("Join (', '):", sj.Join(", ")) // ВывоД: Hello, World, Go, Programming
 }
